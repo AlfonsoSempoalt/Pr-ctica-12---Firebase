@@ -36,7 +36,7 @@ class HomeFragment : Fragment() {
 
         this.storage = FirebaseFirestore.getInstance()
         this.auth = FirebaseAuth.getInstance()
-
+        tasks.clear()
         homeViewModel =
             ViewModelProviders.of(this).get(HomeViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_home, container, false)
@@ -80,6 +80,7 @@ class HomeFragment : Fragment() {
                     }
                     tasks!!.add(Task(it.getString("actividad")!!, dias, it.getString("tiempo")!!))
                 }
+                gridview.
                 adaptador = AdaptadorTareas(context, tasks)
                 gridview.adapter = adaptador
             }
