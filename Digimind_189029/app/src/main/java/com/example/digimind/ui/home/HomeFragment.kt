@@ -80,7 +80,6 @@ class HomeFragment : Fragment() {
                     }
                     tasks!!.add(Task(it.getString("actividad")!!, dias, it.getString("tiempo")!!))
                 }
-                gridview.
                 adaptador = AdaptadorTareas(context, tasks)
                 gridview.adapter = adaptador
             }
